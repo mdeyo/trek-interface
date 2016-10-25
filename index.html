@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<httpProtocol>
+    <customHeaders>
+        <add name="Access-Control-Allow-Origin" value="*" />
+        <add name="Access-Control-Allow-Headers" value="Content-Type" />
+        <add name="Access-Control-Allow-Methods" value="GET, POST, PUT, DELETE, OPTIONS" />
+    </customHeaders>
+</httpProtocol>
+
+<head>
+
+    <title>Trek Interface</title>
+
+    <script src="libs/pouchdb-4.0.0.min.js"></script>
+
+    <!-- <link rel="icon" href="images/car_icon_blue.png" type="image/png"> -->
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="trek.js"></script>
+
+    <!-- Include meta tag to ensure proper rendering and touch zooming -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+    <!-- Include jQuery Mobile stylesheets -->
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
+    <link rel="stylesheet" href="libs/jquery-mobile-1.4.5/jquery.mobile-1.4.5.min.css" ; <!-- Include the jQuery library -->
+    <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+    <script src="libs/jquery-2.1.4/jquery-2.1.4.min.js"></script>
+
+    <!-- Include the jQuery Mobile library -->
+    <!-- <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+    <script src="libs/jquery-mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body onload="init();">
+
+    <div id="coverup" onclick="hidePanels()"></div>
+
+
+    <button id="start_button" onclick="startGame()">Start</button>
+
+    <button id="navigate_toggle" onclick="toggleNavigate()">Navigate</button>
+
+    <div id="navigate_panel">
+        <div style="display:inline-flex;">
+            <h4>Course</h4>
+            <select id="course_select" class="nav_selects">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+            </select>
+        </div>
+
+        <div style="display:inline-flex;">
+            <h4>Warp Speed</h4>
+            <select id="warp_speed_select" class="nav_selects">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+            </select>
+        </div>
+
+        <button id="navigation_button" onclick="sendNavigation()">Execute</button>
+
+    </div>
+
+</body>
